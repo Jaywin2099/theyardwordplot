@@ -48,10 +48,11 @@ print("Computed 2D layout with MDS.")
 print(f"Graph has {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.")
 
 # Plot
-for i, word in enumerate(G.nodes()):
-    x, y = pos[i]
-    plt.text(x, y, word, fontsize=(sum(nx.degree(G, weight='weight')[word] for _ in [0]) // 10))
+for word, (x, y) in pos.items():
+    plt.text(x, y, word, fontsize=(sum(nx.degree(G, weight='weight')[word] for _ in [0]) // 20))
 plt.axis('off')
+plt.width = 800
+plt.height = 600
 plt.show()
 
 print("Plotted graph.")

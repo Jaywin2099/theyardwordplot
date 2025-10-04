@@ -30,6 +30,8 @@ time
 right
 well
 say
+dot
+wasnt
 thing
 make
 good
