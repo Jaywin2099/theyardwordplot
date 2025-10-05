@@ -35,21 +35,22 @@ with open("text.txt", "w") as f:
     f.close()
 
 
-'''
+''' masking the yard logo eventually
 wc.background_color = "white"
-'''
-
 yard_mask = np.array(Image.open('./yardlogo.jpg'))
 
 wc = wordcloud.WordCloud(background_color = 'white', mask = yard_mask, contour_width = 2, contour_color = 'black').generate(text)
+'''
+
+print("Generating word cloud...")
+
 wc = wordcloud.WordCloud()
 wc.width = 4500
 wc.height = 4500
 wc.max_words = 600
-
-
-print("Generating word cloud...")
 img = wc.generate(clean(text))
+
+print(img.words_)
 
 print("Plotting word cloud...")
 plot_word_cloud(img)
